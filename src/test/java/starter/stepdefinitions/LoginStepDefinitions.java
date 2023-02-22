@@ -6,10 +6,12 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
+import starter.dashboard.CrediAvailable;
 import starter.login.Dologin;
 import starter.navigation.NavigateTo;
 
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
+import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class LoginStepDefinitions {
 
@@ -32,8 +34,9 @@ public class LoginStepDefinitions {
     }
     @Then("he should have access to manage his account")
     public void he_should_have_access_to_manage_his_account() {
-        // Write code here that turns the phrase above into concrete actions
-     //   throw new io.cucumber.java.PendingException();
+
+        System.out.println(new CrediAvailable().value().answeredBy(theActorInTheSpotlight()));
+
     }
 
 }
